@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: CodexHost itself
+    url: https://github.com/BytePioneer-AI/codex-host/issues
+    about: Problems that also happen when launching CodexHost manually.
+  - name: ChatGPT Codex Tabs
+    url: https://github.com/yuanruoyu515/chatgpt-codex-tabs/issues
+    about: Tab bar behavior after Desktop has started successfully.

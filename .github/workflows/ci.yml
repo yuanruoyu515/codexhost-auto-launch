@@ -1,0 +1,28 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  manager:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check manager contracts
+        run: python3 -m unittest discover -s tests -p 'test_manage.py' -v
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain
+        run: xcrun swiftc --version
+      - name: Check manager contracts
+        run: python3 -m unittest discover -s tests -p 'test_manage.py' -v
+      - name: Check real macOS launch notifications with an isolated app
+        run: python3 tests/test_lifecycle.py
+        timeout-minutes: 5

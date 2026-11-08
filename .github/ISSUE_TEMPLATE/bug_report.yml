@@ -1,0 +1,28 @@
+name: Launch or installation problem
+description: Report what happened when installing or opening Desktop.
+body:
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: macOS, helper, CodexHost and Desktop versions.
+    validations:
+      required: true
+  - type: textarea
+    id: sequence
+    attributes:
+      label: What did you do?
+      description: Include whether Desktop was already open and how you opened it.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: diagnosis
+    attributes:
+      label: Diagnostics
+      description: Paste relevant doctor.py results. Redact local paths, access tokens and sensitive launcher output before sharing logs.
